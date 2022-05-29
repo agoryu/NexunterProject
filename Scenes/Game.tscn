@@ -16,8 +16,6 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 264, 215 )
 
-[node name="UI" parent="." instance=ExtResource( 4 )]
-
 [node name="TimerScore" type="Timer" parent="."]
 autostart = true
 
@@ -31,5 +29,10 @@ stream = ExtResource( 5 )
 [node name="AudioStreamPlayer_GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[connection signal="update_score" from="." to="CanvasLayer/UI" method="_on_Game_update_score"]
 [connection signal="timeout" from="TimerScore" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer_Intro" to="." method="_on_AudioStreamPlayer_Intro_finished"]

@@ -12,4 +12,4 @@ func _physics_process(delta):
 	self.position.y += speed * delta
 
 func _on_Rock_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass
+	MainScript.game_over()
