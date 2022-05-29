@@ -33,7 +33,10 @@ func _physics_process(delta):
 		
 	if (Input.is_action_pressed("ui_accept") and jump_timer.is_stopped() and jump_recovery.is_stopped()):
 		jump()
-		
+	
+	if (Input.is_action_pressed("Restart")) :
+		get_tree().change_scene("res://Scenes/Game.tscn")
+			
 	velocity = direction.normalized() * speed
 	position.x = clamp(position.x + velocity.x  * delta, 0, view.size.x)
 	position.y = clamp(position.y + velocity.y * delta, 0, view.size.y)

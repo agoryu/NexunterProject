@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Effect/Mort.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 64 )
+extents = Vector2( 16, 52 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
