@@ -9,6 +9,8 @@ extents = Vector2( 63.75, 39.25 )
 [node name="Rock" type="Area2D"]
 collision_layer = 2
 script = ExtResource( 2 )
+minSpeed = null
+maxSpeed = null
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, -2 )
