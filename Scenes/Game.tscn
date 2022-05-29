@@ -20,6 +20,7 @@ position = Vector2( 264, 215 )
 autostart = true
 
 [node name="Music" type="Node" parent="."]
+pause_mode = 2
 
 [node name="AudioStreamPlayer_Intro" type="AudioStreamPlayer" parent="Music"]
 pause_mode = 1
