@@ -19,15 +19,20 @@ position = Vector2( 264, 215 )
 [node name="TimerScore" type="Timer" parent="."]
 autostart = true
 
-[node name="AudioStreamPlayer_Intro" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="Node" parent="."]
+
+[node name="AudioStreamPlayer_Intro" type="AudioStreamPlayer" parent="Music"]
 pause_mode = 1
 stream = ExtResource( 7 )
+volume_db = -10.0
 
-[node name="AudioStreamPlayer_Main" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer_Main" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 5 )
+volume_db = -10.0
 
-[node name="AudioStreamPlayer_GameOver" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer_GameOver" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 6 )
+volume_db = -10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,4 +40,4 @@ stream = ExtResource( 6 )
 
 [connection signal="update_score" from="." to="CanvasLayer/UI" method="_on_Game_update_score"]
 [connection signal="timeout" from="TimerScore" to="." method="_on_Timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer_Intro" to="." method="_on_AudioStreamPlayer_Intro_finished"]
+[connection signal="finished" from="Music/AudioStreamPlayer_Intro" to="." method="_on_AudioStreamPlayer_Intro_finished"]

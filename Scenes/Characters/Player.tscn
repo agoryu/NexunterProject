@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Troot.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Effect/Plouf.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Effect/Boing.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 64 )
@@ -28,6 +30,17 @@ frames = SubResource( 2 )
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 1.011
+one_shot = true
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="Boing" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 4 )
+
+[node name="Plouf" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 3 )
+
+[node name="JumpRecovery" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
