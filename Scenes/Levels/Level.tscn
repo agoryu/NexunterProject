@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Water/SimpleWater.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -20,5 +21,14 @@ rotation = 3.14159
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Background" type="Sprite" parent="."]
+
+[node name="SimpleWater" parent="Background" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 601.0
+margin_right = 1401.0
+margin_bottom = 602.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
