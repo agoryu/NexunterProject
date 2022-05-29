@@ -8,9 +8,16 @@ onready var collision_shape = $CollisionShape2D
 
 onready var boing = $SoundEffects/Boing
 onready var plouf = $SoundEffects/Plouf
+onready var mort = $SoundEffects/Mort
 
 var velocity
 var speed : float = 300.0
+
+func _ready():
+	MainScript.connect("game_over_signal", self, "_on_game_over")
+
+func _on_game_over():
+	mort.play()
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO

@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Troot.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Effect/Plouf.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Effect/Boing.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Effect/Mort.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 52 )
+extents = Vector2( 24, 64 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -39,6 +40,10 @@ stream = ExtResource( 4 )
 
 [node name="Plouf" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource( 3 )
+
+[node name="Mort" type="AudioStreamPlayer" parent="SoundEffects"]
+pause_mode = 2
+stream = ExtResource( 5 )
 
 [node name="JumpRecovery" type="Timer" parent="."]
 one_shot = true
