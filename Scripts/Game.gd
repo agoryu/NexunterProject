@@ -20,7 +20,6 @@ func _on_game_over():
 	
 func _on_Timer_timeout():
 	MainScript.score += 1
-	print(score)
 	emit_signal("update_score", score)
 	
 func _on_AudioStreamPlayer_Intro_finished():
