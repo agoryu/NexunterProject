@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Screens/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Musics/Game_Over.wav" type="AudioStream" id=5]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -19,6 +20,6 @@ position = Vector2( 264, 215 )
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
-[connection signal="update_scrore" from="." to="UI" method="_on_Game_update_scrore"]
 [connection signal="timeout" from="TimerScore" to="." method="_on_Timer_timeout"]
