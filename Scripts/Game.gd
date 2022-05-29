@@ -4,9 +4,9 @@ signal update_score
 
 onready var timer_score = $TimerScore
 
-onready var music_intro = $AudioStreamPlayer_Intro
-onready var music_main = $AudioStreamPlayer_Main
-onready var music_gameover = $AudioStreamPlayer_GameOver
+onready var music_intro = $Music/AudioStreamPlayer_Intro
+onready var music_main = $Music/AudioStreamPlayer_Main
+onready var music_gameover = $MusicAudioStreamPlayer_GameOver
 
 var score : int
 
