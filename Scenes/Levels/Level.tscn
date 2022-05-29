@@ -18,7 +18,7 @@ curve = SubResource( 1 )
 position = Vector2( 600, 0 )
 rotation = 3.14159
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerRock" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
@@ -31,4 +31,14 @@ margin_left = 601.0
 margin_right = 1401.0
 margin_bottom = 602.0
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="TimerFish" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="TimerTrunk" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="TimerRock" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerFish" to="." method="_on_TimerFish_timeout"]
+[connection signal="timeout" from="TimerTrunk" to="." method="_on_TimerTrunk_timeout"]
