@@ -11,3 +11,8 @@ func game_over():
 
 func _on_Game_update_score():
 	$Score.text = "%s" % MainScript.score
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/Game.tscn")
+	get_tree().paused = false
+	MainScript.score = 0

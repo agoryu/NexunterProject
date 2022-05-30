@@ -4,7 +4,7 @@ onready var view : = get_viewport_rect()
 onready var animated_sprite = $AnimatedSprite
 onready var jump_timer = $JumpTimer
 onready var jump_recovery = $JumpRecovery
-onready var collision_shape = $CollisionShape2D
+onready var collision_area = $Area2D/CollisionShape2D
 
 onready var boing = $SoundEffects/Boing
 onready var plouf = $SoundEffects/Plouf
@@ -46,12 +46,16 @@ func jump():
 		boing.play()
 	animated_sprite.scale.x = 0.2
 	animated_sprite.scale.y = 0.2
-	collision_shape.disabled = true
+	collision_area.disabled = true
 	jump_timer.start()
 
 func _on_JumpTimer_timeout():
 	plouf.play()
 	animated_sprite.scale.x = 0.15
 	animated_sprite.scale.y = 0.15
-	collision_shape.disabled = false
+	collision_area.disabled = false
 	jump_recovery.start()
+
+
+func _on_Area2D_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	MainScript.game_over()
