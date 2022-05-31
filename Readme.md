@@ -1,12 +1,12 @@
-#NexunterProject
+# NexunterProject
 
 A beautiful game with fish
 
-##Credits
+## Credits
 Agoryu => developer
 Zoldh => developer and shader developer
 Mille => Graphist
 FuretBicephale => Sound designer and composer
 
-##Game link
+## Game link
 https://agoryu.itch.io/nexunterproject
