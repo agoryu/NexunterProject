@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "CustomSortScore",
+"language": "GDScript",
+"path": "res://Scripts/Sort/CustomSortScore.gd"
+} ]
+_global_script_class_icons={
+"CustomSortScore": ""
+}
+
 [application]
 
 config/name="NexunterProject"
@@ -28,6 +38,11 @@ window/size/height=800
 Restart={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_back={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777220,"unicode":0,"echo":false,"script":null)
  ]
 }
 
