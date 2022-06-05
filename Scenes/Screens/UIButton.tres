@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Screens/ocean.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Screens/Buche.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 209, 66 )
+
+[resource]
+Button/colors/font_color = Color( 0.847059, 0.839216, 0.223529, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.0784314, 0.0588235, 0.709804, 1 )
+Button/colors/font_color_hover = Color( 0.0784314, 0.0588235, 0.709804, 1 )
+Button/colors/font_color_pressed = Color( 0.0352941, 0.184314, 0.576471, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 2 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = null

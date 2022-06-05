@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Screens/UI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Screens/ocean.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/Screens/UIFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/Screens/NameSaver.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Screens/ScoresDisplayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Screens/UIButton.tres" type="Theme" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
 font_data = ExtResource( 2 )
 
 [node name="UI" type="Control"]
@@ -33,6 +31,11 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.196078 )
+
 [node name="Label" type="Label" parent="GameOver"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -48,16 +51,20 @@ text = "GAME OVER"
 
 [node name="NameSaver" parent="GameOver" instance=ExtResource( 4 )]
 
+[node name="ScoresDisplayer" parent="GameOver" instance=ExtResource( 5 )]
+visible = false
+
 [node name="Button" type="Button" parent="GameOver"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -52.0
+margin_left = -124.0
 margin_top = 136.0
-margin_right = 60.0
+margin_right = 128.0
 margin_bottom = 178.0
-custom_fonts/font = SubResource( 2 )
+theme = ExtResource( 6 )
 text = "Retry"
 
+[connection signal="score_saved" from="GameOver/NameSaver" to="." method="_on_NameSaver_score_saved"]
 [connection signal="pressed" from="GameOver/Button" to="." method="_on_Button_pressed"]

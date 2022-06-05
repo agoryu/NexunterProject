@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CustomSortScore",
 "language": "GDScript",
 "path": "res://Scripts/Sort/CustomSortScore.gd"
+}, {
+"base": "HBoxContainer",
+"class": "LineScore",
+"language": "GDScript",
+"path": "res://Scripts/Screens/LineScore.gd"
 } ]
 _global_script_class_icons={
-"CustomSortScore": ""
+"CustomSortScore": "",
+"LineScore": ""
 }
 
 [application]

@@ -27,6 +27,7 @@ func load_data():
 	save_file.close()
 	
 func save_score(score: int, player_name: String):
+	MainScript.load_data()
 	if scores == null or scores.empty():
 		scores[player_name + String(score)] = [score, player_name]
 	else:

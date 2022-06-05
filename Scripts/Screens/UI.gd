@@ -16,3 +16,7 @@ func _on_Button_pressed():
 	get_tree().change_scene("res://Scenes/Game.tscn")
 	get_tree().paused = false
 	MainScript.score = 0
+
+func _on_NameSaver_score_saved():
+	$GameOver/ScoresDisplayer.visible = true
+	$GameOver/Button.grab_focus()

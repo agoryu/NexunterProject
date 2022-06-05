@@ -1,5 +1,7 @@
 extends Control
 
+signal score_saved
+
 var accepted = false
 var letter_selected = 0
 var label_selected = 0
@@ -46,6 +48,7 @@ func _on_SaveButton_button_up():
 	self.visible = false
 	var player_name_label = player_name[0] + player_name[1] + player_name[2]
 	MainScript.save_score(MainScript.score, player_name_label)
+	emit_signal("score_saved")
 
 func set_letter(letter_position):
 	letter_selected = fmod(letter_position, 26) 
